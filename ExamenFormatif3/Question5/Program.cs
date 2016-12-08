@@ -8,6 +8,7 @@ using System.Threading.Tasks;
  * Mathieu Fréchette
  * 2016-11-29
  * Examen formatif 3 - Question 5
+ * 14/15 
  */
 
 namespace Question5
@@ -112,9 +113,13 @@ namespace Question5
                         //AffichageEntier(tabValeur, positionTableau);
 
                         // Test si c'est encore possible d'avancer
+// CC : PositionTableau n'est pas toujours >= 0 ??
                         if (positionTableau >= 0)
                         {
-                            if (tabValeur[positionTableau + 1] == false && tabValeur[positionTableau + 2] == false && tabValeur[positionTableau + 3] == false && tabValeur[positionTableau + 4] == false)
+// CC OK : Tu aurais pu faire une boucle, ou mettre sur plusieurs lignes pour faciliter la lecture
+// Tu aurais aussi pu mettre un commentaire qui explique ce que tu fais ici
+                            if (tabValeur[positionTableau + 1] == false && tabValeur[positionTableau + 2] == false 
+                                && tabValeur[positionTableau + 3] == false && tabValeur[positionTableau + 4] == false)
                             {
                                 encorePossibleAvancer = false;
                             }
@@ -166,7 +171,7 @@ namespace Question5
         private static void Affichage10(bool[] tabValeur, int position)
         {
             Console.Write("[*");
-            for (int i = position + 1; i <= position+10; i++)
+            for (int i = position + 1; i <= position+10; i++)   
             {
                 if (i < tabValeur.GetLength(0))
                 {
